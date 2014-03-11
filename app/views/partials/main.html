@@ -1,21 +1,23 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    <img src="images/TBL.jpg" alt="Sweet Dreams..."><br>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">Welcome!</a></p>
 </div>
 
 <div class="row marketing">
   <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
+      <div class="col-lg-3">
+        <img height="80" ng-src="images/{{thing.logo}}" />
+      </div>
+      <div class="col-lg-9"><h4>{{thing.name}}</h4>
       <p>{{thing.info}}</p>
+      </div>
   </div>
 </div>
 
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <p>♥ <a href="http://www.thebedroomlaboratory.com">The Bedroom Laboratory</a> team</p>
 </div>
