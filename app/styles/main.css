@@ -45,6 +45,7 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #FFFFFF;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -57,6 +58,14 @@ body {
 }
 .marketing p + h4 {
   margin-top: 28px;
+}
+.image-responsive {
+/* display: block; */
+height: auto;
+max-width: 100%;
+}
+.middle{
+  margin: 0 auto;
 }
 
 /* Responsive: Portrait tablets and up */

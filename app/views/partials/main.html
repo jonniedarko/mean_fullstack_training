@@ -2,17 +2,19 @@
 
 <div class="jumbotron">
   <p class="lead">
-    <img src="images/TBL.jpg" alt="Sweet Dreams..."><br>
+    <img class="image-responsive" src="images/TBL.jpg" alt="Sweet Dreams..."><br>
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#">Welcome!</a></p>
 </div>
 
 <div class="row marketing">
   <div ng-repeat="thing in awesomeThings">
-      <div class="col-lg-3">
-        <img height="80" ng-src="images/{{thing.logo}}" />
+      <div class="col-md-3">
+        <div class="middle">
+          <img height="80" align="middle" ng-src="images/{{thing.logo}}" />
+        </div>
       </div>
-      <div class="col-lg-9"><h4>{{thing.name}}</h4>
+      <div class="col-md-9"><h4>{{thing.name}}</h4>
       <p>{{thing.info}}</p>
       </div>
   </div>

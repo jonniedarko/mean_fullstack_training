@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('trainingAppApp')
-  .controller('MainCtrl', function ($scope, $http) {
+angular.module('trainingApp')
+.controller('MainCtrl', function($scope, $http) {
     $http.get('/api/awesomeThings').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+        $scope.awesomeThings = awesomeThings;
     });
-  });
+});
