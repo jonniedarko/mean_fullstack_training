@@ -4,21 +4,86 @@
         <div class="col-sm-12"><h1>{{title}}</h1></div>
     </div>
     <div class="row">
-        <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" placeholder="What's your name?"></div>
-        <div class="col-sm-4 form-group"><input type="text" class="form-control" id="user_id" placeholder="What's your age?"></div>
+        <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" ng-model="user.name" placeholder="What's your name?"></div>
+        <div class="col-sm-4 form-group"><input type="text" class="form-control" id="user_id" ng-model="user.age" placeholder="What's your age?"></div>
     </div>
     <div class="row">
-        <div class="col-sm-6 form-group">
+        <div class="col-sm-4 form-group">
             <div class="input-group">
-                <input type="text" class="form-control" id="user_height" placeholder="What's your height?">
+                <input type="text" class="form-control" id="user_height" ng-model="user.height" placeholder="What's your height?">
                 <span class="input-group-addon">cm</span>
             </div>
         </div>
-        <div class="col-sm-6 form-group">
+        <div class="col-sm-4 form-group">
             <div class="input-group">
-                <input type="text" class="form-control" id="user_weight" placeholder="What's your weight?">
+                <input type="text" class="form-control" ng-model="user.weight" id="user_weight" placeholder="What's your weight?">
                 <span class="input-group-addon">kg</span>
             </div>
         </div>
+        <div class="col-sm-4 form-group">
+            <div class="input-group">
+                <select name="" id="user_sex" ng-model="user.sex" class="form-control form-control">
+                    <option value="">what is your sex?</option>
+                    <option value="male">Male</option>
+                    <option value="female">female</option>
+                </select>
+            </div>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12"><p class="bg-primary"><b>Basic Metabolic Rate: </b> {{getMetaRate()}}</p></input></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <select name="" id="" class="form-control" ng-model="user.activityLevel" ng-change="{{setGoals()}}">
+                <option value="">Select you Activity Level</option>
+                <option ng-repeat="activityLevel in activityLevels" value="{{activityLevel.value}}">{{activityLevel.title}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <th></th>
+                    <th>{{goals.current.title}}</th>
+                    <th>{{goals.loss.title}}</th>
+                    <th>{{goals.gain.title}}</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calories:</td>
+                        <td>{{goals.current.calories}}  kcals</td>
+                    <td>{{goals.loss.calories}}  kcals</td>
+                    <td>{{goals.gain.calories}}  kcals</td>
+
+                    </tr>
+                    <tr>
+                        <td>Protien:</td>
+                        <td ng-repeat="goal in goals">{{goal.protein}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fats:</td>
+                        <td ng-repeat="goal in goals">{{goal.fats}}</td>
+                    </tr>
+                    <tr>
+                        <td>Carbs:</td>
+                        <td ng-repeat="goal in goals">{{goal.carbs}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   <!-- <div class="panel panel-default panel-padding">
+        <div class="panel-heading">Activity Level Description</div>
+        <div class="panel-body">
+            <div class="" ng-repeat="activityLevel in activityLevels">
+                <b><u>{{activityLevel.title}}</u></b>
+                <p>{{activityLevel.description}}</p>
+            </div>
+        </div>
+    </div>
+-->
+
 </div>
