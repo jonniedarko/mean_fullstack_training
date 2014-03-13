@@ -12,6 +12,10 @@ angular.module('trainingApp', [
                 templateUrl: 'partials/main',
                 controller: 'MainCtrl'
             })
+            .when('/begin', {
+              templateUrl: 'partials/begin',
+              controller: 'BeginCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
