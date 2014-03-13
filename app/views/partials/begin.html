@@ -21,8 +21,8 @@
             </div>
         </div>
         <div class="col-sm-4 form-group">
-            <div class="input-group">
-                <select name="" id="user_sex" ng-model="user.sex" class="form-control form-control">
+            <div class="">
+                <select name="" id="user_sex" ng-model="user.sex" class="form-control form-control margin-zero">
                     <option value="">what is your sex?</option>
                     <option value="male">Male</option>
                     <option value="female">female</option>
@@ -31,11 +31,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12"><p class="bg-primary"><b>Basic Metabolic Rate: </b> {{getMetaRate()}}</p></input></div>
+        <div class="col-sm-12"><p class="bg-primary"><b>{{getName()}}&nbsp;Basic Metabolic Rate: &nbsp;</b>&nbsp; {{getMetaRate()}}</p></input></div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <select name="" id="" class="form-control" ng-model="user.activityLevel" ng-change="{{setGoals()}}">
+            <select name="" id="" class="form-control" ng-model="user.activityLevel" ng-change="{{updateNutrition()}}">
                 <option value="">Select you Activity Level</option>
                 <option ng-repeat="activityLevel in activityLevels" value="{{activityLevel.value}}">{{activityLevel.title}}</option>
             </select>
@@ -46,29 +46,24 @@
             <table class="table table-bordered">
                 <thead>
                     <th></th>
-                    <th>{{goals.current.title}}</th>
-                    <th>{{goals.loss.title}}</th>
-                    <th>{{goals.gain.title}}</th>
+                      <td ng-repeat="goal in goals">{{goal.title}}</td>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Calories:</td>
-                        <td>{{goals.current.calories}}  kcals</td>
-                    <td>{{goals.loss.calories}}  kcals</td>
-                    <td>{{goals.gain.calories}}  kcals</td>
-
+                        <td ng-repeat="goal in goals">{{goal.calories | number:0}}</td>
                     </tr>
                     <tr>
                         <td>Protien:</td>
-                        <td ng-repeat="goal in goals">{{goal.protein}}</td>
+                        <td ng-repeat="goal in goals">{{goal.protein | number:0}}</td>
                     </tr>
                     <tr>
                         <td>Fats:</td>
-                        <td ng-repeat="goal in goals">{{goal.fats}}</td>
+                        <td ng-repeat="goal in goals">{{goal.fats | number:0}}</td>
                     </tr>
                     <tr>
                         <td>Carbs:</td>
-                        <td ng-repeat="goal in goals">{{goal.carbs}}</td>
+                        <td ng-repeat="goal in goals">{{goal.carbs | number:0}}</td>
                     </tr>
                 </tbody>
             </table>
